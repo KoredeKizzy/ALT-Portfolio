@@ -1,0 +1,31 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .repository {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .repository h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .repository p {
+    margin-bottom: 5px;
+  }
+  
+  .repository:last-child {
+    margin-bottom: 0;
+  }
+  

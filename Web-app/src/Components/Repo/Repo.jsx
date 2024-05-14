@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
-import '../Repo/Repo.css';
-
+import { useState, useEffect } from "react";
+import '../../../src/components/Repo/Repo.css';
 
 function App() {
   const [repositories, setRepositories] = useState([]);
-  const token = process.env.REACT_APP_GITHUB_TOKEN;
+  const token = import.meta.env.REACT_APP_GITHUB_TOKEN;
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(3); // Display 3 items per page
 
+  // Calculate total pages based on the number of items and items per page
+  const totalPages = Math.ceil(repositories.length / itemsPerPage);
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = repositories.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = Array.isArray(repositories) ? repositories.slice(indexOfFirstItem, indexOfLastItem) : [];
 
   useEffect(() => {
     async function fetchRepositories() {
@@ -28,11 +30,7 @@ function App() {
     }
   
     fetchRepositories(); // Call fetchRepositories inside useEffect
-  
   }, [token]); // Include token in the dependency array
-
-  // Calculate total pages based on the number of items and items per page
-  const totalPages = Math.ceil(repositories.length / itemsPerPage);
 
   const nextPage = () => {
     setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages));
@@ -44,10 +42,10 @@ function App() {
   
   return (
     <div className="container">
-      <h1>GitHub Repositories</h1>
+      {/* <h1>GitHub Repositories</h1> */}
       <div id="repositories">
         {currentItems.map(repository => (
-          <div key={repository.id} className="repository">
+          <div key={repository.id} className="repository" >
             <h3>{repository.name}</h3>
             <p>{repository.description || "No description"}</p>
             <p>Stars: {repository.stargazers_count} | Forks: {repository.forks_count}</p>
@@ -55,9 +53,9 @@ function App() {
         ))}
       </div>
       <><br /></>
-      <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+      <button className="button" onClick={prevPage} disabled={currentPage === 1}>Previous</button>
       <span>Page {currentPage} of {totalPages}</span>
-      <button onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
+      <button className="button" onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
     </div>
   );
 }

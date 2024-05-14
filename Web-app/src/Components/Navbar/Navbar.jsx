@@ -1,5 +1,5 @@
-import React from "react";
-import './Navbar.css'
+// import React from "react";
+import '../Navbar/Navbar.css'
 
 const Navbar = () => {
     return (
@@ -8,9 +8,9 @@ const Navbar = () => {
                 <div className="n-name">GitHub PortFolio</div>
             </div>
             <div className="n-right"></div>
-              <button className="button n-button">
+              {/* <button className="button n-button">
                 Contact us
-              </button>
+              </button> */}
         </div>
     )
 }

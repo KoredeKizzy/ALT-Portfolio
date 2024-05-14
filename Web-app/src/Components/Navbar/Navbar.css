@@ -2,6 +2,10 @@
   height: 10vh;
   display: flex;
   justify-content: space-between;
+  background-color: rgb(90, 65, 65);
+  color: aliceblue;
+  padding: 2rem;
+  border-radius: 2rem;
 }
 
 .n-left {

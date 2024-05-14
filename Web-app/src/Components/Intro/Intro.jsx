@@ -1,7 +1,5 @@
-import React from 'react'
-import './Intro.css'
-
-
+// import React from 'react'
+import  '../../../src/components/Intro/Intro.css'
 
 const intro = () => {
   return (

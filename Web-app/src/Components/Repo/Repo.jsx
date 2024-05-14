@@ -3,7 +3,6 @@ import '../../../src/components/Repo/Repo.css';
 
 function App() {
   const [repositories, setRepositories] = useState([]);
-  const token = import.meta.env.REACT_APP_GITHUB_TOKEN;
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(3); // Display 3 items per page
 

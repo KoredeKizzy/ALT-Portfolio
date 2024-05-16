@@ -3,7 +3,7 @@ import  '../../../src/components/Intro/Intro.css'
 
 const intro = () => {
   return (
-    <div className='i-ntro'>
+    <div className='i-intro'>
       <div className='i-left'>
         <div className='i-name'>
           <span>

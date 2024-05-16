@@ -1,8 +1,6 @@
-.i-intro {
+/* .i-intro {
     display: flex;
-    height: 77vh;
-    margin-top: 6rem;
-  }
+  } */
   
   .i-left {
     display: flex;
@@ -10,10 +8,12 @@
     flex: 1;
     flex-direction: column;
     gap: 2rem;
+    flex-direction: column;
   }
   
   .i-name {
       display: flex; 
+      margin: 3rem;
       flex-direction: column;
   }
   

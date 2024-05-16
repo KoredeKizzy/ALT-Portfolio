@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import '../../../src/components/Repo/Repo.css';
+import '../Repo/Repo.css';
 
 function App() {
   const [repositories, setRepositories] = useState([]);
-  const token = import.meta.env.REACT_APP_GITHUB_TOKEN;
+  const token = process.env.REACT_APP_API_KEY;
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(3); // Display 3 items per page
 
@@ -53,9 +53,11 @@ function App() {
         ))}
       </div>
       <><br /></>
+      <div className="buttonn">
       <button className="button" onClick={prevPage} disabled={currentPage === 1}>Previous</button>
       <span>Page {currentPage} of {totalPages}</span>
       <button className="button" onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
+      </div>
     </div>
   );
 }

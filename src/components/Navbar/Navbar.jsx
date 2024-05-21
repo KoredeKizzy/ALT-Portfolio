@@ -1,3 +1,4 @@
+import React from 'react';
 import '../Navbar/Navbar.css'
 import Github from '../../img/github.png'
 

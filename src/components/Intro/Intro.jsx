@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 import  '../../../src/components/Intro/Intro.css'
 
 const intro = () => {

@@ -48,11 +48,11 @@ function App() {
         ))}
       </div>
       <br />
-      <div className="buttonn">
-        <button className="button" onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+     
+        <button className="button button1" onClick={prevPage} disabled={currentPage === 1}>Previous</button>
         <span>Page {currentPage} of {totalPages}</span>
-        <button className="button" onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
-      </div>
+        <button className="button button2" onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
+     
     </div>
   );
 }
